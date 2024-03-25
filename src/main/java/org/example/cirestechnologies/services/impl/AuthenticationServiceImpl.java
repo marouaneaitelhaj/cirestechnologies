@@ -1,16 +1,16 @@
-package org.example.testcirestechnologies.service.impl;
+package org.example.cirestechnologies.services.impl;
 
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.example.testcirestechnologies.config.JwtService;
-import org.example.testcirestechnologies.dto.AuthenticationRequest;
-import org.example.testcirestechnologies.dto.AuthenticationResponse;
-import org.example.testcirestechnologies.dto.RegisterRequest;
-import org.example.testcirestechnologies.entity.DBUser;
-import org.example.testcirestechnologies.enums.Role;
-import org.example.testcirestechnologies.repo.UserRepository;
-import org.example.testcirestechnologies.service.inter.AuthenticationServiceInterface;
+import org.example.cirestechnologies.configs.JwtService;
+import org.example.cirestechnologies.dto.AuthenticationRequest;
+import org.example.cirestechnologies.dto.AuthenticationResponse;
+import org.example.cirestechnologies.dto.RegisterRequest;
+import org.example.cirestechnologies.entities.DBUser;
+import org.example.cirestechnologies.enums.Role;
+import org.example.cirestechnologies.repositories.UserRepository;
+import org.example.cirestechnologies.services.inter.AuthenticationService;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -20,7 +20,7 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 @Data
 @Service
-public class AuthenticationService implements AuthenticationServiceInterface {
+public class AuthenticationServiceImpl implements AuthenticationService {
 
     private  final UserRepository userRepository;
 

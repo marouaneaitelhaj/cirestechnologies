@@ -1,4 +1,4 @@
-package org.example.testcirestechnologies.config;
+package org.example.cirestechnologies.configs;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

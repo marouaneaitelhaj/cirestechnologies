@@ -1,4 +1,4 @@
-package org.example.testcirestechnologies.config;
+package org.example.cirestechnologies.configs;
 
 import lombok.AllArgsConstructor;
 import org.example.testcirestechnologies.repo.UserRepository;

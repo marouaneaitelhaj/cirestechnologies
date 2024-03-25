@@ -1,12 +1,15 @@
-package org.example.testcirestechnologies.controller;
+package org.example.cirestechnologies.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.example.testcirestechnologies.dto.AuthenticationRequest;
-import org.example.testcirestechnologies.dto.RegisterRequest;
-import org.example.testcirestechnologies.repo.UserRepository;
-import org.example.testcirestechnologies.service.impl.AuthenticationService;
+import org.example.cirestechnologies.dto.AuthenticationRequest;
+import org.example.cirestechnologies.dto.RegisterRequest;
+import org.example.cirestechnologies.repositories.UserRepository;
+import org.example.cirestechnologies.services.inter.AuthenticationService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
