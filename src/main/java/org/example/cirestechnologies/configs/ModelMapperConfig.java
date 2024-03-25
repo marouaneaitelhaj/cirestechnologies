@@ -1,4 +1,4 @@
-package org.example.testcirestechnologies.config;
+package org.example.cirestechnologies.configs;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

@@ -1,4 +1,4 @@
-package org.example.testcirestechnologies.dto;
+package org.example.cirestechnologies.dto;
 
 import lombok.Data;
 

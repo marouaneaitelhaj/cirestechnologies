@@ -1,4 +1,4 @@
-package org.example.testcirestechnologies.config;
+package org.example.cirestechnologies.configs;
 
 import com.github.javafaker.Faker;
 import org.springframework.context.annotation.Bean;

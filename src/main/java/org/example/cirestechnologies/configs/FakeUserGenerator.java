@@ -1,9 +1,9 @@
-package org.example.testcirestechnologies.config;
+package org.example.cirestechnologies.configs;
 
 import com.github.javafaker.Faker;
 import lombok.RequiredArgsConstructor;
-import org.example.testcirestechnologies.entity.DBUser;
-import org.example.testcirestechnologies.enums.Role;
+import org.example.cirestechnologies.entities.DBUser;
+import org.example.cirestechnologies.enums.Role;
 import org.springframework.stereotype.Component;
 
 @Component
