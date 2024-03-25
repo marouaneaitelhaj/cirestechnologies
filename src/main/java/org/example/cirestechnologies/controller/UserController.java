@@ -1,11 +1,10 @@
-package org.example.testcirestechnologies.controller;
+package org.example.cirestechnologies.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
-import org.example.testcirestechnologies.dto.UploadDtoRes;
-import org.example.testcirestechnologies.entity.DBUser;
-import org.example.testcirestechnologies.service.inter.JsonFileDateSaverService;
-import org.example.testcirestechnologies.service.inter.UsersGeneratorService;
+import org.example.cirestechnologies.dto.UploadDtoRes;
+import org.example.cirestechnologies.entities.DBUser;
+import org.example.cirestechnologies.services.inter.UserServiceInterface;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -20,9 +19,7 @@ import java.util.List;
 @RequestMapping("/api/users")
 public class UserController {
 
-    private final UsersGeneratorService usersGeneratorService;
-
-    private final JsonFileDateSaverService jsonFileDateSaverService;
+    private final UserServiceInterface usersGeneratorService;
 
     @GetMapping("/generate")
     public ResponseEntity<Object> generate(@RequestParam int count) throws IOException {
@@ -42,7 +39,7 @@ public class UserController {
 
     @PostMapping(value = "/batch", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<UploadDtoRes> uploadUsers(@RequestParam("file") MultipartFile file) throws IOException {
-        return ResponseEntity.ok(jsonFileDateSaverService.saveJsonFileDateToDatabase(file));
+        return ResponseEntity.ok(usersGeneratorService.saveJsonFileDateToDatabase(file));
     }
 
 }

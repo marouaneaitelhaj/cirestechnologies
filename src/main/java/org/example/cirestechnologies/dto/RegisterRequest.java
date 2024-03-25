@@ -1,9 +1,9 @@
-package org.example.testcirestechnologies.dto;
+package org.example.cirestechnologies.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import org.example.testcirestechnologies.enums.Role;
+import org.example.cirestechnologies.enums.Role;
 
 @Builder
 @AllArgsConstructor
