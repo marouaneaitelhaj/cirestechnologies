@@ -23,16 +23,19 @@ public class SecurityConfiguration {
 
 
     private static final String[] WHITE_LIST_URL = {
-            "/api/auth/login",
+            "/api/auth",
+            "/api/auth/signup",
             "/api/users/batch",
             "/api/users/generate",
-            "/api/users",
             "/v2/api-docs",
             "/v3/api-docs",
             "/v3/api-docs/**",
             "/swagger-ui/**",
             "/swagger-ui.html",
             "/h2-console/**",
+            "/api/usersfactorie/**",
+            "/swagger-ui/**",
+            "/v2/api-docs"
     };
 
     @Bean
@@ -44,9 +47,7 @@ public class SecurityConfiguration {
                         .permitAll()
                         .anyRequest().authenticated()
                 )
-
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
-
         http.addFilterAfter(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();

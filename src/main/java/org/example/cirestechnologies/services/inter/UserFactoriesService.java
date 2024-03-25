@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.List;
 
 
-public interface UserServiceInterface {
+public interface UserFactoriesService {
     List<DBUser> generateUsers(int count);
     UploadDtoRes saveJsonFileDateToDatabase(MultipartFile jsonFile) throws IOException;
 }

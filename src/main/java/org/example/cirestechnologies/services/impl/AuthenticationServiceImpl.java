@@ -52,16 +52,18 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Override
     public AuthenticationResponse register(RegisterRequest registerRequest) {
-        DBUser user = DBUser.builder()
-                .username(registerRequest.getUsername())
-                .password(passwordEncoder.encode(registerRequest.getPassword()))
-                .role(Role.USER)
-                .email(registerRequest.getEmail())
-                .build();
+        DBUser user = modelMapper.map(registerRequest, DBUser.class);
+        user.setPassword(passwordEncoder.encode(registerRequest.getPassword()));
+        user.setRole(Role.USER);
         userRepository.save(user);
         var jwtToken = jwtService.generateToken(user);
         return AuthenticationResponse.builder()
                 .token(jwtToken)
                 .build();
+    }
+
+    @Override
+    public DBUser getUserDbUser(String name) {
+        return userRepository.findByUsername(name).orElseThrow(() -> new RuntimeException("User not found"));
     }
 }

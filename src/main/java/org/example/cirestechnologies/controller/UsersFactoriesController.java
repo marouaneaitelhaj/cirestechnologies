@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.example.cirestechnologies.dto.UploadDtoRes;
 import org.example.cirestechnologies.entities.DBUser;
-import org.example.cirestechnologies.services.inter.UserServiceInterface;
+import org.example.cirestechnologies.services.inter.UserFactoriesService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -17,9 +17,9 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/users")
-public class UserController {
+public class UsersFactoriesController {
 
-    private final UserServiceInterface usersGeneratorService;
+    private final UserFactoriesService usersGeneratorService;
 
     @GetMapping("/generate")
     public ResponseEntity<Object> generate(@RequestParam int count) throws IOException {

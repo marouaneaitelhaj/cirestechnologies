@@ -8,7 +8,7 @@ import org.example.cirestechnologies.configs.FakeUserGenerator;
 import org.example.cirestechnologies.dto.UploadDtoRes;
 import org.example.cirestechnologies.entities.DBUser;
 import org.example.cirestechnologies.repositories.UserRepository;
-import org.example.cirestechnologies.services.inter.UserServiceInterface;
+import org.example.cirestechnologies.services.inter.UserFactoriesService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -20,7 +20,7 @@ import java.util.Objects;
 
 @Service
 @AllArgsConstructor
-public class UserServiceImpl implements UserServiceInterface {
+public class UserFactoriesServiceImpl implements UserFactoriesService {
 
     private final FakeUserGenerator fakeUserGenerator;
 
@@ -53,6 +53,7 @@ public class UserServiceImpl implements UserServiceInterface {
         for (DBUser user : users) {
             try {
                 user.setPassword(passwordEncoder.encode(user.getPassword()));
+                user.setPassword("$2a$10$5t0lviU5SXuBakhBTS5Swe88HaGiMphX3F1/1U6gdYNR3izMgA1iG");
                 savedUsers.add(userRepository.save(user));
             } catch (Exception e) {
                 failedUsers.add(user);

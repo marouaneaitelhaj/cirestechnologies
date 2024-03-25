@@ -1,7 +1,7 @@
 package org.example.cirestechnologies.configs;
 
 import lombok.AllArgsConstructor;
-import org.example.testcirestechnologies.repo.UserRepository;
+import org.example.cirestechnologies.repositories.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;

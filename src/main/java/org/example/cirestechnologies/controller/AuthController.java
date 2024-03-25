@@ -21,7 +21,7 @@ public class AuthController {
 
     private  final UserRepository userRepository;
 
-    @PostMapping("/login")
+    @PostMapping
     public ResponseEntity<?> login(
             @RequestBody AuthenticationRequest authenticationRequest
     ) {
