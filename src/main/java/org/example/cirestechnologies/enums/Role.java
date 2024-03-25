@@ -1,4 +1,4 @@
-package org.example.testcirestechnologies.enums;
+package org.example.cirestechnologies.enums;
 
 
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

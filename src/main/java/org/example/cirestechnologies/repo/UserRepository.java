@@ -1,6 +1,8 @@
-package org.example.testcirestechnologies.repo;
+package org.example.cirestechnologies.repo;
 
-import org.example.testcirestechnologies.entity.DBUser;
+
+
+import org.example.cirestechnologies.entity.DBUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

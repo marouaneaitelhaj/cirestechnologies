@@ -1,4 +1,4 @@
-package org.example.testcirestechnologies.entity;
+package org.example.cirestechnologies.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
